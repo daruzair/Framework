@@ -1,0 +1,10 @@
+DirectoryIndex app/web.php
+<IfModule mod_rewrite.c >
+    <IfModule mod_negotiation.c>
+            Options -Indexes
+    </IfModule>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ app/web.php?requesturl=$1 [QSA,L]
+</IfModule>
